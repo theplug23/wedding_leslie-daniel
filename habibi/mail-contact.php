@@ -1,20 +1,30 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $attendance = isset($_POST['radio-group']) ? $_POST['radio-group'] : '';
+    $guests = $_POST['guest'];
+    $event = $_POST['what'];
+    $meal_preference = $_POST['meal'];
 
-	$to = "andytchouta@gmail.com"; // this is your Email address
-	$from  = $_POST['email']; // this is the sender's Email address
-	$sender_name = $_POST['name'];
-	$adress = $_POST['adress'];
-	$date = $_POST['date'];
-	$guest = $_POST['guest'];
-	$meal = $_POST['meal'];
-	$service = $_POST['service'];
-	$note = $_POST['note'];
+    $to = "andytchouta@andytchouta.com"; // Remplacez cette adresse e-mail par votre propre adresse e-mail
+    $subject = "RSVP pour un événement";
+    $message = "Nom: $name\n";
+    $message .= "Email: $email\n";
+    $message .= "Participation: $attendance\n";
+    $message .= "Nombre d'invités: $guests\n";
+    $message .= "Événement: $event\n";
+    $message .= "Préférence de repas: $meal_preference\n";
 
-	$subject = "Form submission";
+    $headers = "From: $email";
 
-	$message = $sender_name . " has send the contact message. His / Her wedding date is " . $date . " and his / her adress is "  . $adress . " and his / her guest number is " . $guest . " and his / her Service is " . $service . " and his / her Meal Name is " . $meal . ". He / she wrote the following... ". "\n\n" . $note;
-
-	$headers = 'From: ' . $from;
-	mail($to, $subject, $message, $headers);
-
+	ini_set("SMTP", "localhost");
+    ini_set("smtp_port", "1025");
+	
+    if (mail($to, $subject, $message, $headers)) {
+        echo "<p style='color:green;'>Merci, message envoyé</p>";
+    } else {
+        echo "<p style='color:red;'>Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.</p>";
+    }
+}
 ?>
