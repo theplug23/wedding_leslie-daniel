@@ -18,9 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $headers = "From: $email";
 
-	ini_set("SMTP", "localhost");
-    ini_set("smtp_port", "1025");
-	
+	// ini_set("SMTP", "localhost");
+    // ini_set("smtp_port", "1025");
+
     if (mail($to, $subject, $message, $headers)) {
         echo "<p style='color:green;'>Merci, message envoyé</p>";
     } else {
