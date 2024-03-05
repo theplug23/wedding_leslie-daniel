@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $event = $_POST['what'];
     $meal_preference = $_POST['meal'];
 
-    $to = "andytchouta@andytchouta.com"; // Remplacez cette adresse e-mail par votre propre adresse e-mail
+    $to = "andytchouta@gmail.com"; // Remplacez cette adresse e-mail par votre propre adresse e-mail
     $subject = "RSVP pour un événement";
     $message = "Nom: $name\n";
     $message .= "Email: $email\n";
