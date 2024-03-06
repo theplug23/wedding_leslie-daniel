@@ -2,8 +2,10 @@
 if (isset($_POST['send'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $cc = 'infinityparty237@gmail.com,travauxtheplug@gmail.com'; // Copie du mail
-    $bcc = 'yehielyanou@gmail.com'; // Copie cachee du mail 
+    // $cc = 'infinityparty237@gmail.com,travauxtheplug@gmail.com';
+     // Copie du mail
+    // $bcc = 'yehielyanou@gmail.com'; 
+    // Copie cachee du mail 
     $attendance = isset($_POST['radio-group']) ? $_POST['radio-group'] : '';
     $guests = $_POST['guest'];
     $event = $_POST['what'];
@@ -21,7 +23,7 @@ if (isset($_POST['send'])) {
     $headers = array(
         'From' => ''.$email.'',
         // 'Cc' => ''.$cc.'',
-        'Bcc' => ''.$bcc.'',
+        // 'Bcc' => ''.$bcc.'',
         'Content-type' => 'text/html; charset=utf-8',
         'MIME-version' => '1.0',
         'Reply-To' => ''.$email.''
