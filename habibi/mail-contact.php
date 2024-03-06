@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
     $meal_preference = $_POST['meal'];
 
     $to = "andytchouta@gmail.com"; // Remplacez cette adresse e-mail par votre propre adresse e-mail
-    $subject = "RSVP pour un événement";
+    $subject = "Reservation pour mariage";
     $message = "Nom: $name<br/>";
     $message .= "Email: $email<br/>";
     $message .= "Participation: $attendance<br/>";
