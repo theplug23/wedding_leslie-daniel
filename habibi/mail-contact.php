@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
     $meal_preference = $_POST['meal'];
 
     $to = "andytchouta@gmail.com"; // Remplacez cette adresse e-mail par votre propre adresse e-mail
-    $subject = "Reservation pour mariage";
+    $subject = "RSVP pour un événement";
     $message = "Nom: $name<br/>";
     $message .= "Email: $email<br/>";
     $message .= "Participation: $attendance<br/>";
@@ -20,7 +20,7 @@ if (isset($_POST['send'])) {
 
     $headers = array(
         'From' => ''.$email.'',
-        'Cc' => ''.$cc.'',
+        // 'Cc' => ''.$cc.'',
         'Bcc' => ''.$bcc.'',
         'Content-type' => 'text/html; charset=utf-8',
         'MIME-version' => '1.0',
@@ -31,7 +31,7 @@ if (isset($_POST['send'])) {
     // ini_set("smtp_port", "1025");
     $true = mail($to, $subject, $message, $headers);
     if ($true) {
-        echo "<p style='color:green;'>Merci  message envoyé</p>";
+        echo "<p style='color:green;'>Merci message envoyé</p>";
     } else {
         echo "<p style='color:red;'>Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.</p>";
     }
