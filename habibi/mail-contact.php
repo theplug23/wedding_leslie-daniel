@@ -16,12 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "Événement: $event\n";
     $message .= "Préférence de repas: $meal_preference\n";
 
-    $headers = "From: $email";
+    $headers = array(
+        'Content-type' => 'text/html; charset=utf-8',
+        'MIME-version' => '1.0',
+        'Reply-To' => ''.$email.''
+    );
 
 	// ini_set("SMTP", "localhost");
     // ini_set("smtp_port", "1025");
-
-    if (mail($to, $subject, $message)) {
+    $true = mail($to, $subject, $message, $headers);
+    if ($true) {
         echo "<p style='color:green;'>Merci, message envoyé</p>";
     } else {
         echo "<p style='color:red;'>Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.</p>";
