@@ -575,14 +575,15 @@
                                 <h2>Serez-vous présent ?</h2>
                             </div>
                             <div class="wpo-contact-form-area">
-                                <form method="post" action="mail-contact.php" class="contact-validation-active" id="contact-form-main">
+                                <!-- id="contact-form-main" -->
+                                <form method="post" action="mail-contact.php" class="contact-validation-active">
                                     <div>
                                         <input type="text" class="form-control" name="name" id="name"
-                                            placeholder="Nom">
+                                            placeholder="Nom" required>
                                     </div>
                                     <div>
                                         <input type="email" class="form-control" name="email" id="email"
-                                            placeholder="Email">
+                                            placeholder="Email" required>
                                     </div>
                                     <div class="radio-buttons">
                                         <p>
@@ -595,7 +596,7 @@
                                         </p>
                                     </div>
                                     <div>
-                                        <select name="guest" class="form-control">
+                                        <select name="guest" class="form-control" required>
                                             <option disabled="disabled" selected>Nombre d'invités</option>
                                             <option>01</option>
                                             <option>02</option>
@@ -606,10 +607,10 @@
                                     </div>
                                     <div>
                                         <input type="text" class="form-control" name="what" id="what"
-                                            placeholder="À quoi assisterez-vous ?">
+                                            placeholder="À quoi assisterez-vous ?" required>
                                     </div>
                                     <div>
-                                        <select name="meal" class="form-control last">
+                                        <select name="meal" class="form-control last" required>
                                             <option disabled="disabled" selected>Préférences de repas</option>
                                             <option>Soupe de poulet</option>
                                             <option>Motton Kabab</option>
