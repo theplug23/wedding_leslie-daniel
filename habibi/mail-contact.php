@@ -21,7 +21,7 @@ if (isset($_POST['send'])) {
     $message .= "Préférence de repas: $meal_preference<br/>";
 
     $headers = array(
-        'From' => ''.$email.'',
+        // 'From' => ''.$email.'',
         // 'Cc' => ''.$cc.'',
         // 'Bcc' => ''.$bcc.'',
         'Content-type' => 'text/html; charset=utf-8',
@@ -29,8 +29,6 @@ if (isset($_POST['send'])) {
         'Reply-To' => ''.$email.''
     );
 
-	// ini_set("SMTP", "localhost");
-    // ini_set("smtp_port", "1025");
     $true = mail($to, $subject, $message, $headers);
     if ($true) {
         echo "<p style='color:green;'>Merci message envoyé</p>";
