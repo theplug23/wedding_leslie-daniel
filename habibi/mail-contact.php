@@ -27,9 +27,10 @@ if (isset($_POST['send'])) {
 
     $true = mail($to, $subject, $message, $headers);
     if ($true) {
-        echo "<p style='color:green;'>Merci, le message a été envoyé.</p>";
+        echo "<p style='color:green; text-align: center; margin: 20px auto; padding: 10px; background-color: #eafbea; border: 1px solid #4caf50; border-radius: 5px;'>Merci, le message a été envoyé.</p>";
+        echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./index.html';\">Retourner au site</button>";
     } else {
-        echo "<p style='color:red;'>Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.</p>";
+        echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.</p>";
     }
 }
 ?>
