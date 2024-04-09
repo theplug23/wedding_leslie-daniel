@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#responseMessage {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}

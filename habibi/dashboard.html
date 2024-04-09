@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/dash.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Tableau de bord </h1>
+        <button onclick="logout()">Déconnexion</button>
+        <form id="invitationForm">
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" id="email" placeholder="Entrez une adresse e-mail">
+            <button type="submit" onclick="sendInvitation()">Envoyer l'invitation</button>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+    <script src="./assets/js/dashboard.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
