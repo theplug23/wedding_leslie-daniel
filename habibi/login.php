@@ -13,8 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         header('Location: dashboard.html');
         exit();
-    } else {
-        echo "<p style='color:green; text-align: center; margin: 20px auto; padding: 10px; background-color: #eafbea; border: 1px solid #4caf50; border-radius: 5px;'>Identifiants incorrects. Veuillez réessayer.</p>";
+    } else if ($email === '' || $password === ''){
+        echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Remplir tous les champs, puis réessayer.</p>";
+        echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./login.html';\">Ok, compris</button>";
+    }
+    else{
+        echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Identifiants incorrects. Veuillez réessayer.</p>";
+        echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./login.html';\">Ok, compris</button>";
 
     }
 } else {

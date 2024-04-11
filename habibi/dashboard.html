@@ -5,10 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/dash.css">
     <title>Dashboard</title>
+    <style>
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .data-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .data-table tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .data-table td button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style pour mettre en surbrillance le bouton quand survolé */
+        .data-table td button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="dashboard">
         <h1>Tableau de bord </h1>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Statut</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jacob</td>
+                    <td>jacob@gmail.com</td>
+                    <td></td>
+                    <td><button>invitaion</button></td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>jacob@gmail.com</td>
+                    <td></td>
+                    <td><button>invitaion</button></td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>jacob@gmail.com</td>
+                    <td></td>
+                    <td><button>invitaion</button></td>
+                </tr>
+            </tbody>
+        </table>
         <button onclick="logout()">Déconnexion</button>
         <form id="invitationForm">
             <label for="email">Adresse e-mail :</label>
@@ -19,7 +88,12 @@
     </div>
     <script src="./assets/js/dashboard.js"></script>
     <script>
-        
+        function logout() {
+             // Ici, vous pouvez ajouter la logique de déconnexion, par exemple, en invalidant la session ou en supprimant les cookies
+    
+            // Exemple simple de redirection vers une page de connexion
+            window.location.href = "./login.html";
+        }
     </script>
 </body>
 </html>

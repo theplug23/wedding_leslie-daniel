@@ -1,13 +1,20 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dashboard {
-    max-width: 400px;
-    margin: 50px auto;
+    max-width: 800px; /* Pour limiter la largeur du contenu */
+    width: 100%; /* Prend toute la largeur de l'écran */
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 label {
