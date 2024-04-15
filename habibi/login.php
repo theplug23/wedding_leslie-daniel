@@ -1,14 +1,29 @@
 <?php
 // Vérifier si le formulaire a été soumis
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les valeurs du formulaire
     $email = $_POST['email'];
     $password = $_POST['pass'];
 
+    $host = "localhost";
+    $user = "root";
+    $pwd = "";
+    $dbname = "wedding_leslie_daniel";
+
+    $con = new mysqli($host, $user, $pwd, $dbname);
+
+    if($con->connect_error){
+        die("erreur de connexion : ". $con->connect_error);
+    }
+
+    $query = "SELECT * FROM admin WHERE email_admin='$email' AND mdp='$password'";
+
+    $result = $con->query($query);
+
     // var_dump($_POST);
     // exit();
-    if ($email === 'demo@gmail.com' && $password === '123456') {
-        session_start();
+    if ($result->num_rows == 1) {
         $_SESSION['email'] = $email;
         
         header('Location: dashboard.html');

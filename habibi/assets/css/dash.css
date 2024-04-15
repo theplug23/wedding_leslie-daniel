@@ -12,9 +12,16 @@ body {
 }
 
 .dashboard {
-    max-width: 800px; /* Pour limiter la largeur du contenu */
+    max-width: 1200px; /* Pour limiter la largeur du contenu */
     width: 100%; /* Prend toute la largeur de l'écran */
     padding: 20px;
+}
+
+.dashboard .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 label {
@@ -28,7 +35,11 @@ input {
     margin-bottom: 10px;
 }
 
-button {
+.dashboard h1 {
+    margin: 0;
+}
+
+.dashboard button {
     padding: 5px 10px;
     background-color: #007bff;
     color: white;
