@@ -1,4 +1,17 @@
 <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+try {
+    $bdd = new PDO("mysql:host=$servername;dbname=wedding_leslie_daniel", $username, $password);
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Erreur de connexion : ".$e->getMessage();
+}
+
+
 if (isset($_POST['send'])) {
     $name = $_POST['name'];
     $email = $_POST['email']; 
@@ -7,6 +20,14 @@ if (isset($_POST['send'])) {
     $guests = $_POST['guest'];
     $event = $_POST['what'];
     $meal_preference = $_POST['meal'];
+
+    $requete = $bdd->prepare("INSERT INTO invite VALUES (0, :name, :email)");
+    $requete->execute(
+        array(
+            "name" => $name,
+            "email" => $email
+        )
+    );
     
 
     $to = "andytchouta@gmail.com"; // Remplacez cette adresse e-mail par votre propre adresse e-mail
