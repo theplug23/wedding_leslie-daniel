@@ -18,8 +18,8 @@ if (isset($_POST['send'])) {
     // Copie cachee du mail
     $attendance = isset($_POST['radio-group']) ? $_POST['radio-group'] : '';
     $guests = $_POST['guest'];
-    $event = $_POST['what'];
-    $meal_preference = $_POST['meal'];
+    // $event = $_POST['what'];
+    // $meal_preference = $_POST['meal'];
 
     $requete = $bdd->prepare("INSERT INTO invite VALUES (0, :name, :email)");
     $requete->execute(
