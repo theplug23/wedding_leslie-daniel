@@ -98,21 +98,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/dashboard.js"></script>
     <script>
-        $(document).ready(function() {
-            $.ajax({
-                url: 'dash.php',
-                type: 'GET',
-                success: function(data) {
-                    $('#invitesTable tbody').html(data);
-                },
-                error: function(xhr, status, error) {
-                    $('#invitesTable tbody').html('<tr><td colspan="4">Erreur : Impossible de récupérer les données.</td></tr>');
-                }
+       $(document).ready(function() {
+            // Charger les données du tableau au chargement de la page
+            function loadTableData() {
+                $.ajax({
+                    url: 'dash.php',
+                    type: 'GET',
+                    success: function(data) {
+                        $('#invitesTable tbody').html(data);
+                    },
+                    error: function(xhr, status, error) {
+                        $('#invitesTable tbody').html('<tr><td colspan="4">Erreur : Impossible de récupérer les données.</td></tr>');
+                    }
+                });
+            }
+
+            loadTableData(); // Charger les données initiales du tableau
+
+            // Gérer l'événement d'envoi d'invitation
+            $('#invitesTable').on('submit', 'form', function(event) {
+                event.preventDefault();
+
+                var form = $(this);
+                var formData = form.serialize();
+
+                $.ajax({
+                    url: form.attr('action'),
+                    type: form.attr('method'),
+                    data: formData,
+                    success: function(response) {
+                        $('#invitesTable tbody').html(response); // Mettre à jour le tableau avec la réponse
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Erreur : Impossible d'envoyer l'invitation.");
+                    }
+                });
             });
         });
+
         function logout() {
             // Ici, vous pouvez ajouter la logique de déconnexion, par exemple, en invalidant la session ou en supprimant les cookies
-    
+
             // Exemple simple de redirection vers une page de connexion
             window.location.href = "./login.html";
         }
