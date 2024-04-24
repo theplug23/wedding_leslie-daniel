@@ -36,8 +36,8 @@ if (isset($_POST['send'])) {
     $message .= "Email: $email<br/>";
     $message .= "Participation: $attendance<br/>";
     $message .= "Nombre d'invités: $guests<br/>";
-    $message .= "Événement: $event<br/>";
-    $message .= "Préférence de repas: $meal_preference<br/>";
+    // $message .= "Événement: $event<br/>";
+    // $message .= "Préférence de repas: $meal_preference<br/>";
 
     $headers = array(
         'From' => ''.$email.'',

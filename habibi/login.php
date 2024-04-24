@@ -1,6 +1,12 @@
 <?php
 // Vérifier si le formulaire a été soumis
 session_start();
+
+if (isset($_SESSION['email'])) {
+    header('Location: dashboard.html');
+    exit();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les valeurs du formulaire
     $email = $_POST['email'];
@@ -38,7 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 } else {
-    header('Location: login.html');
-    exit();
+    if(isset($_SESSION['email'])){
+        header('Location: dashboard.html');
+        exit();
+    }else{
+        header('Location: login.html');
+        exit();
+    }
 }
 ?>
