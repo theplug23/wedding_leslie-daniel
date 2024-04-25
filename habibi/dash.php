@@ -33,12 +33,13 @@
                 $message = "<html><body>";
                 $message .= "<h1>Monsieur/Madame,</h1><br/>
                 <p>Vous êtes convié à prendre part à notre cérémonie de mariage.</p><br/>
+                <p>Confirmez votre presence en repondant a ce mail.</p><br/>
                 <p>Nous espérons vous compter parmi les présents ce jour !</p>";
                 $message .= "</body></html>";
 
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
-                $headers .= "From: test mail <testmail@test.com>" . "\r\n";
+                $headers .= "From: test mail <testmail@test.com.com>" . "\r\n";
 
                 if (mail($to, $subject, $message, $headers)) {
                     // Réponse envoyée
