@@ -1,11 +1,11 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "u965103173_leslie_daniel";
+$password = "King1992!!";
 
 try {
-    $bdd = new PDO("mysql:host=$servername;dbname=wedding_leslie_daniel", $username, $password);
+    $bdd = new PDO("mysql:host=$servername;dbname=u965103173_leslie_daniel", $username, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Erreur de connexion : ".$e->getMessage();

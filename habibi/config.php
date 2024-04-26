@@ -1,9 +1,9 @@
 <?php
     // Informations de connexion à la base de données
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "wedding_leslie_daniel";
+    $username = "u965103173_leslie_daniel";
+    $password = "King1992!!";
+    $dbname = "u965103173_leslie_daniel";
 
     try {
         // Connexion à la base de données avec PDO

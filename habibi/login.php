@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['pass'];
 
     $host = "localhost";
-    $user = "root";
-    $pwd = "";
-    $dbname = "wedding_leslie_daniel";
+    $user = "u965103173_leslie_daniel";
+    $pwd = "King1992!!";
+    $dbname = "u965103173_leslie_daniel";
 
     $con = new mysqli($host, $user, $pwd, $dbname);
 
