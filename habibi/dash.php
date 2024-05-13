@@ -1,12 +1,10 @@
 <?php
-    $servername = "localhost";
-    $username = "u965103173_leslie_daniel";
-    $password = "King1992!!";
-    $dbname = "u965103173_leslie_daniel";
+    session_start();
+    
+    include('./connectDB.php');
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = $pdo->open();
 
         $stmt = $conn->prepare("SELECT * FROM invite");
         $stmt->execute();

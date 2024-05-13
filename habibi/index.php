@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -91,7 +93,7 @@
                             <div class="col-lg-2 col-md-2 col-2">
                                 <div class="header-right">
                                     <div class="mini-cart">
-                                        <a href="./login.html" class="cart-toggle-btn"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(101,113,80,1)"><path d="M12 14V22H4C4 17.5817 7.58172 14 12 14ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM21 17H22V22H14V17H15V16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16V17ZM19 17V16C19 15.4477 18.5523 15 18 15C17.4477 15 17 15.4477 17 16V17H19Z"></path></svg>
+                                        <a href="<?= $_SESSION['id'] ? 'dashboard.php' : 'login.html' ?>" class="cart-toggle-btn"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(101,113,80,1)"><path d="M12 14V22H4C4 17.5817 7.58172 14 12 14ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM21 17H22V22H14V17H15V16C15 14.3431 16.3431 13 18 13C19.6569 13 21 14.3431 21 16V17ZM19 17V16C19 15.4477 18.5523 15 18 15C17.4477 15 17 15.4477 17 16V17H19Z"></path></svg>
                                             <!-- <span class="cart-count">2</span> -->
                                             <span>Admin</span>
                                         </a>
@@ -219,12 +221,7 @@
                                             </div>
                                             <div class="couple-text">
                                                 <h3>Leslie Tchouapa</h3>
-                                                <p>Coucou mes très chères convives,
-                                                    tout en espérant que cette invitation vous parviennes dans un meilleur 
-                                                    état de santé que vous serrez  à mes cotés lors de mes épousailles 
-                                                    A l’occasion de cette cérémonie pleine d’émotions Daniel et moi nous vous invitons à prendre part à ce moment magnifique qui se tiendra samedi le 3 SEPTEMBRE 2024 sis a au Bourget Beach nord aux environs de 14H 
-                                                    Merci d’honorer ce jour de votre présence
-                                                    </p>
+                                                <p>Nos chemins se sont croisés pour la première fois en 2009 à l’époque nous étions collégiens scolarisés au Collège Alfred Saker. Depuis lors nous avons rimés entre Amour et amitié et aujourd’hui, nous avons décidé de célébrer notre amour et de s’unir pour la vie devant nos familles et nos ami(es). C’est la raison pour laquelle nous avons décidé de vous convier à une belle journée qi aura lieu le 21/09/2024. La cérémonie religieuse débutera à 14 heures à l’église Saint-Jean Baptiste de Chaumont-En-Vexin 60240.</p>
                                                 <!-- <div class="social">
                                                     <ul>
                                                         <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -257,11 +254,7 @@
                                             </div>
                                             <div class="couple-text">
                                                 <h3>Daniel</h3>
-                                                <p>Coucou mes très chères convives,
-                                                    tout en espérant que cette invitation vous parviennes dans un meilleur 
-                                                    état de santé que vous serrez  à mes cotés lors de mes épousailles 
-                                                    A l’occasion de cette cérémonie pleine d’émotions Daniel et moi nous vous invitons à prendre 
-                                                    </p>
+                                                <p>La bonne nouvelle ? On va se marier ! <br>La mauvaise ? Vous allez devoir vous mettre sur votre 31 !<br>En effet, à l’issue de la cérémonie religieuse nous serions ravis de vous recevoir à 16h pour un cocktail suivi d’une soirée au Domaine de la muette à Montchevreuil 60240</p>
                                                 <!-- <div class="social">
                                                     <ul>
                                                         <li><a href="#"><i class="ti-facebook"></i></a></li>
@@ -302,7 +295,7 @@
                         <div class="row">
                             <div class="col col-lg-6 col-12">
                                 <div class="wpo-story-img">
-                                    <img src="assets/img/photo-meet.jpg" alt="">
+                                    <img src="assets/img/ld2.jpeg" alt="">
                                 </div>
                             </div>
                             <div class="col col-lg-6 col-12">
@@ -313,10 +306,8 @@
                                             <img src="assets/images/story/pin.svg" alt="">
                                         </div>
                                     </div>
-                                    <h2>Notre rencontre</h2>
-                                    <p>Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim
-                                        tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit
-                                        convallis libero. Nunc in eu tellus ipsum placerat.</p>
+                                    <h2>Comment on s’est rencontré</h2>
+                                    <p>Leslie sortait de ses cours d’anglais en fin d’après midi et sur le trajet de retour à la maison, elle a aperçu un beau goss du haut de son balcon chez lui, et a bloqué sur sa beauté. Ayant des amis en communs, parmi lesquels se trouvaient des petits cousins de Daniel, qui ont joué les entremetteurs, les présentations ont été faites, Daniel à son tour fut sous le charme de cette fraîche et jeune jolie Demoiselle. À noter quand-même qu’à l’époque Daniel était en Tle et Leslie en 1ière , et donc la démarche de Leslie de faire le premier pas a agréablement surpris Daniel, car en bon Camerounais et bon Sakérois, généralement les Tle ne traînent pas avec les 1ière . Depuis ce jour s’en est suivi une relation d’amitié, d’amour de jeunesse, d’amitié, d’amour d’ados, etc, et donc là vous assister à la saison 20, et notamment au dernier épisode de ce feuilleton qui aura duré aussi longtemps que les feux de l’amour…</p>
                                     <div class="flower">
                                         <img src="assets/images/story/flower.svg" alt="">
                                     </div>
@@ -340,7 +331,7 @@
                         <div class="row">
                             <div class="col col-lg-6 col-12 order-lg-2 order-1">
                                 <div class="wpo-story-img">
-                                    <img src="assets/img/proposition.jpg" alt="">
+                                    <img src="assets/img/ld6.jpeg" alt="">
                                 </div>
                             </div>
                             <div class="col col-lg-6 col-12 order-lg-1 order-2">
@@ -351,10 +342,8 @@
                                             <img src="assets/images/story/pin.svg" alt="">
                                         </div>
                                     </div>
-                                    <h2>Il a proposé, j'ai dit oui</h2>
-                                    <p>Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim
-                                        tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit
-                                        convallis libero. Nunc in eu tellus ipsum placerat.</p>
+                                    <h2>Il m’a fait sa demande, j’ai dit OUI</h2>
+                                    <p>Pour célébrer nos 5 ans de relations, nous avons optés pour une soirée en tête à tête dans un restaurant de la place Parisienne et nous avons évoqué le sujet du mariage suite à nos fiançailles comme ça en passant, et à y réfléchir on s’est posé la question de savoir ce qu’on attendait pour se marier, et aucune réponse pertinente n’est apparue, et on s’est donc dit que c’était le bon moment pour enclencher le projet, car comme tout le monde on a tendance souvent à attendre le moment idéal pour franchir le pas, mais bizarrement lors de cette soirée là tous les feux étaient au vert, et nous avons donc pris la décision de nous marier. Daniel a pris la décision de faire de moi sa femme, et moi Leslie j’ai pris la décision de faire de lui mon Mari, pour la vie!!!</p>
                                     <div class="flower">
                                         <img src="assets/images/story/flower-2.svg" alt="">
                                     </div>
@@ -378,7 +367,7 @@
                         <div class="row">
                             <div class="col col-lg-6 col-12">
                                 <div class="wpo-story-img">
-                                    <img src="assets/img/engagement.jpg" alt="">
+                                    <img src="assets/img/ld7.jpeg" alt="">
                                 </div>
                             </div>
                             <div class="col col-lg-6 col-12">
@@ -390,9 +379,7 @@
                                         </div>
                                     </div>
                                     <h2>Nos fiançailles</h2>
-                                    <p>Consectetur adipiscing elit. Fringilla at risus orci, tempus facilisi sed. Enim
-                                        tortor, faucibus netus orci donec volutpat adipiscing. Sit condimentum elit
-                                        convallis libero. Nunc in eu tellus ipsum placerat.</p>
+                                    <p>Je sortais d’une journée chargée, entre courses et appels téléphoniques à l’extérieur, et quand je suis arrivée à la maison, j’ai constaté qu’il y’avait une atmosphère différente du quotidien, Daniel était arrivée bien avant moi et m’attendait dans une ambiance tamisée, avec musique particulièrement douce, un chemin de pétales de rose du séjour jusqu’à la chambre me mena à lui, où je l’ai retrouvé le genou à terre avec une bague à la main, j’ai à peine entendu ce qu’il a dit que j’ai fondue en larmes. Il faut dire que durant toute cette journée là j’avais pensé à tout sauf à ça, pour le coup je ne m’y attendais pas du tout et je fus agréablement surprise par cette prise d’initiative spontanée, après 2 ans de relation et 1 an de vie commune,on était fiancés !!</p>
                                     <div class="flower">
                                         <img src="assets/images/story/flower.svg" alt="">
                                     </div>
@@ -438,9 +425,9 @@
                         <div class="portfolio-grids gallery-container clearfix portfolio-slide owl-carousel">
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/img/gal-1.jpg" class="fancybox"
+                                    <a href="assets/img/ld1.jpeg" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/img/gal-1.jpg" alt class="img img-responsive">
+                                        <img src="assets/img/ld1.jpeg" alt class="img img-responsive">
                                         <div class="hover-content">
                                             <!-- <i class="ti-plus"></i> -->
                                         </div>
@@ -449,9 +436,9 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/img/gal-2.jpg" class="fancybox"
+                                    <a href="assets/img/ld3.jpeg" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/img/gal-2.jpg" alt class="img img-responsive">
+                                        <img src="assets/img/ld3.jpeg" alt class="img img-responsive">
                                         <div class="hover-content">
                                             <!-- <i class="ti-plus"></i> -->
                                         </div>
@@ -460,9 +447,9 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/img/gal-3.jpg" class="fancybox"
+                                    <a href="assets/img/ld4.jpeg" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/img/gal-3.jpg" alt class="img img-responsive">
+                                        <img src="assets/img/ld4.jpeg" alt class="img img-responsive">
                                         <div class="hover-content">
                                             <!-- <i class="ti-plus"></i> -->
                                         </div>
@@ -471,9 +458,9 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/img/gal-4.jpg" class="fancybox"
+                                    <a href="assets/img/ld5.jpeg" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/img/gal-4.jpg" alt class="img img-responsive">
+                                        <img src="assets/img/ld5.jpeg" alt class="img img-responsive">
                                         <div class="hover-content">
                                             <!-- <i class="ti-plus"></i> -->
                                         </div>
@@ -482,9 +469,9 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/img/gal-5.jpg" class="fancybox"
+                                    <a href="assets/img/ld8.jpeg" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/img/gal-5.jpg" alt class="img img-responsive">
+                                        <img src="assets/img/ld8.jpeg" alt class="img img-responsive">
                                         <div class="hover-content">
                                             <!-- <i class="ti-plus"></i> -->
                                         </div>
@@ -493,9 +480,9 @@
                             </div>
                             <div class="grid">
                                 <div class="img-holder">
-                                    <a href="assets/img/gal-6.jpg" class="fancybox"
+                                    <a href="assets/img/ld9.jpeg" class="fancybox"
                                         data-fancybox-group="gall-1">
-                                        <img src="assets/img/gal-6.jpg" alt class="img img-responsive">
+                                        <img src="assets/img/ld9.jpeg" alt class="img img-responsive">
                                         <div class="hover-content">
                                             <!-- <i class="ti-plus"></i> -->
                                         </div>
@@ -513,71 +500,29 @@
         <section class="wpo-team-section section-padding pt-0">
             <div class="container">
                 <div class="wpo-section-title">
-                    <span>Personnes importantes</span>
-                    <h2>Demoiselles et Garçons d'honneur</h2>
+                    <span></span>
+                    <h2>Les témoins du mariage</h2>
                 </div>
                 <div class="wpo-team-wrap scene-2" id="scene-2">
                     <div class="row">
-                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.10">
-                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1000ms">
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.25">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1600ms">
                                 <div class="wpo-team-img-wrap">
                                     <div class="wpo-team-img"
-                                        style="mask-image: url(./assets/images/team/mask-1.svg); -webkit-mask-image: url(./assets/images/team/mask-1.svg);">
-                                        <img src="assets/img/person-1.jpg" alt="">
+                                        style="mask-image: url(./assets/images/team/mask-4.svg); -webkit-mask-image: url(./assets/images/team/mask-4.svg);">
+                                        <img src="assets/img/person-4.jpg" alt="">
                                     </div>
                                     <div class="team-shape">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265 236" fill="none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257 255" fill="none">
                                             <path
-                                                d="M151.285 236C133.89 236 115.923 232.537 98.1199 225.675C71.5047 215.399 46.7662 197.903 28.4734 176.424C-1.79698 140.848 -8.47116 96.8976 11.0455 61.7114C28.4897 30.2812 62.954 7.30616 100.992 1.76157C133.694 -3.00254 166.95 1.97295 194.643 15.7612C224.44 30.6064 246.225 54.5083 257.647 84.8978C268.434 113.596 267.308 146.181 254.563 174.31C251.642 180.749 247.905 186.944 243.45 192.716C242.896 193.432 241.884 193.562 241.166 193.009C240.448 192.456 240.317 191.448 240.872 190.733C245.18 185.156 248.787 179.172 251.61 172.977C264.012 145.628 265.105 113.938 254.612 86.0523C232.893 28.3463 169.92 -4.98624 101.465 4.98101C64.4063 10.3793 30.8559 32.7202 13.9012 63.2886C-4.94641 97.2553 1.59722 139.791 30.9538 174.31C69.5139 219.626 131.54 242.065 181.784 228.894C192.081 226.195 201.937 222.082 211.108 216.683C211.891 216.228 212.886 216.472 213.343 217.252C213.8 218.033 213.539 219.025 212.772 219.48C203.356 225.041 193.206 229.268 182.616 232.049C172.515 234.683 162.006 236 151.285 236ZM228.258 207.984C227.801 207.984 227.344 207.789 227.034 207.432C226.447 206.749 226.512 205.724 227.197 205.139C230.869 201.952 234.312 198.521 237.413 194.944C238 194.261 239.028 194.196 239.714 194.781C240.399 195.367 240.464 196.391 239.877 197.074C236.662 200.781 233.121 204.326 229.335 207.594C229.025 207.854 228.633 207.984 228.258 207.984Z"
+                                                d="M30.7743 183.077C30.4007 182.817 30.0138 182.547 29.6402 182.287C28.9064 181.775 28.7337 180.743 29.2585 180.019C29.7698 179.285 30.7794 179.116 31.5132 179.628L31.5265 179.637C45.18 189.37 60.9235 197.071 76.1443 204.526C80.9454 206.881 85.4918 209.118 89.889 211.369C125.803 229.777 158.251 242.32 189.114 249.715C213.597 255.598 234.577 244.152 245.208 219.113C247.849 212.905 249.693 206.163 250.705 199.078C250.932 197.473 251.146 195.857 251.347 194.233C251.455 193.337 252.267 192.714 253.162 192.822C254.058 192.931 254.682 193.742 254.573 194.638C254.377 196.285 254.153 197.913 253.93 199.542C252.876 206.914 250.963 213.926 248.204 220.388C236.899 247.02 214.525 259.158 188.359 252.875C157.249 245.408 124.55 232.769 88.4082 214.262C84.0377 212.029 79.5047 209.802 74.7169 207.456C59.8002 200.133 44.3967 192.57 30.7743 183.077ZM17.7738 172.749C17.7204 172.711 17.6537 172.665 17.5963 172.605C13.9789 169.291 10.7569 165.837 7.99578 162.347C1.59458 154.239 -0.96387 145.082 0.396814 135.108C4.93918 101.683 51.3402 67.6956 73.6429 51.3646L74.9438 50.408C77.2158 48.7406 79.5982 46.9717 82.0724 45.128C117.855 18.5276 177.723 -25.9955 215.161 21.0858C242.864 55.9119 257.939 109.114 256.572 167.052C256.422 173.468 256.054 179.912 255.479 186.171C255.392 187.062 254.612 187.727 253.72 187.641C252.829 187.555 252.164 186.775 252.25 185.883C252.824 179.683 253.181 173.311 253.335 166.976C254.695 109.787 239.861 57.3477 212.638 23.1134C177.148 -21.5006 121.092 20.1689 84.0123 47.7485C81.5155 49.5962 79.1238 51.3785 76.8518 53.0459L75.5509 54.0025C55.3367 68.8157 7.96459 103.514 3.60853 135.563C2.37514 144.614 4.70676 152.958 10.5362 160.351C13.1918 163.708 16.299 167.043 19.7882 170.228C20.4569 170.833 20.4897 171.866 19.885 172.535C19.336 173.124 18.4275 173.204 17.7738 172.749Z"
                                                 fill="" />
                                         </svg>
                                     </div>
                                 </div>
                                 <div class="wpo-team-text">
-                                    <h3><a>Jenny Wilson</a></h3>
-                                    <span>Demoiselle</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.15">
-                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1200ms">
-                                <div class="wpo-team-img-wrap">
-                                    <div class="wpo-team-img"
-                                        style="mask-image: url(./assets/images/team/mask-2.svg); -webkit-mask-image: url(./assets/images/team/mask-2.svg);">
-                                        <img src="assets/img/person-2.jpg" alt="">
-                                    </div>
-                                    <div class="team-shape">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261 241" fill="none">
-                                            <path
-                                                d="M59.0013 241C58.546 241 58.0744 241 57.619 241C56.7246 241 55.9928 240.252 56.0091 239.358C56.0091 238.463 56.7409 237.748 57.6353 237.748H57.6516C74.4181 237.927 91.7375 235.243 108.488 232.658C113.773 231.845 118.782 231.08 123.677 230.413C163.666 224.982 197.459 216.721 227.008 205.142C250.458 195.97 261.126 174.585 255.532 147.963C254.15 141.361 251.808 134.774 248.588 128.383C247.856 126.936 247.108 125.489 246.344 124.041C245.921 123.244 246.23 122.269 247.027 121.846C247.824 121.423 248.799 121.732 249.222 122.529C250.003 123.992 250.751 125.456 251.499 126.92C254.849 133.571 257.288 140.417 258.72 147.296C264.672 175.609 253.255 198.36 228.195 208.167C198.402 219.827 164.349 228.153 124.116 233.633C119.253 234.3 114.261 235.064 108.992 235.878C92.5669 238.398 75.6052 241 59.0013 241ZM42.43 239.959C42.3649 239.959 42.2836 239.959 42.2023 239.943C37.3399 239.293 32.7213 238.301 28.4606 237.016C18.5731 234.024 11.2388 227.974 6.65277 219.014C-8.73144 188.993 9.90524 134.579 18.8658 108.429L19.3862 106.901C20.2969 104.234 21.2401 101.42 22.2159 98.4931C36.3641 56.2109 60.0259 -14.5467 117.66 2.67517C160.3 15.4086 203.086 50.4378 235.09 98.7533C238.635 104.104 242.018 109.6 245.124 115.064C245.563 115.845 245.303 116.837 244.522 117.276C243.742 117.715 242.75 117.455 242.311 116.674C239.237 111.259 235.887 105.827 232.391 100.542C200.809 52.8446 158.657 18.3033 116.749 5.78129C62.1237 -10.5299 39.9581 55.7068 25.3057 99.5339C24.3137 102.477 23.3705 105.307 22.4598 107.974L21.9394 109.503C13.8245 133.213 -5.2025 188.766 9.54747 217.55C13.7106 225.681 20.3945 231.194 29.4038 233.926C33.5019 235.162 37.9578 236.122 42.6414 236.74C43.5358 236.853 44.1538 237.683 44.04 238.577C43.9261 239.374 43.2268 239.959 42.43 239.959Z"
-                                                fill="" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="wpo-team-text">
-                                    <h3><a>Robert Fox</a></h3>
-                                    <span>Garçon</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.20">
-                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1400ms">
-                                <div class="wpo-team-img-wrap">
-                                    <div class="wpo-team-img"
-                                        style="mask-image: url(./assets/images/team/mask-3.svg); -webkit-mask-image: url(./assets/images/team/mask-3.svg);">
-                                        <img src="assets/img/person-3.jpg" alt="">
-                                    </div>
-                                    <div class="team-shape">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 254" fill="none">
-                                            <path
-                                                d="M131.937 252.602C121.041 250.837 110.559 246.734 102.019 241.452C81.2753 228.594 65.364 208.806 49.9852 189.654C47.1118 186.08 44.2666 182.545 41.4244 179.096C32.5393 168.313 22.4797 156.086 14.6852 143.024C14.2133 142.226 14.4678 141.185 15.2683 140.696C16.0662 140.224 17.107 140.479 17.5957 141.279C25.2526 154.131 35.2254 166.258 44.0236 176.941C46.8797 180.409 49.7223 183.961 52.6124 187.538C67.8202 206.473 83.5437 226.041 103.79 238.579C123.536 250.812 154.089 256.448 174.523 239.937C177.033 237.905 179.512 235.541 181.897 232.904C182.524 232.216 183.599 232.15 184.288 232.776C184.976 233.403 185.043 234.479 184.416 235.167C181.925 237.924 179.322 240.422 176.656 242.567C163.906 252.885 147.502 255.123 131.937 252.602ZM188.711 228.478C188.46 228.437 188.217 228.346 187.988 228.172C187.236 227.62 187.064 226.562 187.615 225.81C200.423 208.132 208.397 184.777 214.877 164.288C218.16 153.879 221.191 143.12 224.096 132.718C226.723 123.388 229.419 113.742 232.339 104.305C239.682 80.5034 249.738 47.901 233.115 24.3398C231.089 21.4697 228.747 18.8575 226.147 16.5641C213.624 5.55255 196.955 3.59094 185.188 3.91772C184.254 3.95543 183.465 3.20922 183.446 2.2616C183.426 1.33071 184.155 0.538559 185.103 0.520304C202.853 0.0463956 217.829 4.72227 228.399 14.009C231.195 16.4715 233.711 19.2836 235.891 22.3677C253.478 47.2875 243.136 80.8054 235.583 105.277C232.688 114.667 229.978 124.293 227.369 133.609C224.445 144.025 221.409 154.817 218.117 165.276C211.561 186.028 203.471 209.674 190.372 227.768C189.971 228.338 189.314 228.575 188.711 228.478ZM9.82859 132.395C9.29302 132.309 8.81485 131.973 8.55874 131.434C6.9008 127.885 5.47128 124.304 4.27337 120.778C0.928071 110.892 -3.1574 92.11 7.02199 77.4076C13.8369 67.5706 24.7285 62.3615 35.2669 57.3185C38.0788 55.9705 40.7405 54.7013 43.3321 53.3348C81.061 33.5454 121.614 13.8183 162.414 3.69817C168.481 2.19043 174.583 1.20376 180.546 0.761268C181.466 0.704118 182.3 1.3888 182.354 2.32511C182.425 3.26413 181.727 4.07844 180.79 4.13288C175.02 4.55498 169.112 5.50452 163.223 6.97243C122.766 16.9934 82.4353 36.6192 44.8733 56.3326C42.226 57.7244 39.4141 59.0724 36.6968 60.367C26.5673 65.2185 16.0872 70.2195 9.78469 79.3322C0.4722 92.8182 4.33764 110.414 7.47114 119.698C8.61838 123.113 10.014 126.586 11.6212 130.023C12.018 130.861 11.6491 131.866 10.8119 132.263C10.4781 132.415 10.1466 132.447 9.82859 132.395Z"
-                                                fill="" />
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="wpo-team-text">
-                                    <h3><a>Annette Black</a></h3>
-                                    <span>Demoiselle</span>
+                                    <h3><a>Jeatsa</a></h3>
+                                    <span>Témoin Daniel</span>
                                 </div>
                             </div>
                         </div>
@@ -597,8 +542,155 @@
                                     </div>
                                 </div>
                                 <div class="wpo-team-text">
-                                    <h3><a>Jenefer Abram</a></h3>
-                                    <span>Demoiselle</span>
+                                    <h3><a>Moukory</a></h3>
+                                    <span>Témoin Daniel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.10">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1000ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-1.svg); -webkit-mask-image: url(./assets/images/team/mask-1.svg);">
+                                        <img src="assets/img/person-1.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265 236" fill="none">
+                                            <path
+                                                d="M151.285 236C133.89 236 115.923 232.537 98.1199 225.675C71.5047 215.399 46.7662 197.903 28.4734 176.424C-1.79698 140.848 -8.47116 96.8976 11.0455 61.7114C28.4897 30.2812 62.954 7.30616 100.992 1.76157C133.694 -3.00254 166.95 1.97295 194.643 15.7612C224.44 30.6064 246.225 54.5083 257.647 84.8978C268.434 113.596 267.308 146.181 254.563 174.31C251.642 180.749 247.905 186.944 243.45 192.716C242.896 193.432 241.884 193.562 241.166 193.009C240.448 192.456 240.317 191.448 240.872 190.733C245.18 185.156 248.787 179.172 251.61 172.977C264.012 145.628 265.105 113.938 254.612 86.0523C232.893 28.3463 169.92 -4.98624 101.465 4.98101C64.4063 10.3793 30.8559 32.7202 13.9012 63.2886C-4.94641 97.2553 1.59722 139.791 30.9538 174.31C69.5139 219.626 131.54 242.065 181.784 228.894C192.081 226.195 201.937 222.082 211.108 216.683C211.891 216.228 212.886 216.472 213.343 217.252C213.8 218.033 213.539 219.025 212.772 219.48C203.356 225.041 193.206 229.268 182.616 232.049C172.515 234.683 162.006 236 151.285 236ZM228.258 207.984C227.801 207.984 227.344 207.789 227.034 207.432C226.447 206.749 226.512 205.724 227.197 205.139C230.869 201.952 234.312 198.521 237.413 194.944C238 194.261 239.028 194.196 239.714 194.781C240.399 195.367 240.464 196.391 239.877 197.074C236.662 200.781 233.121 204.326 229.335 207.594C229.025 207.854 228.633 207.984 228.258 207.984Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Tafida</a></h3>
+                                    <span>Témoin Leslie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.25">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1600ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-4.svg); -webkit-mask-image: url(./assets/images/team/mask-4.svg);">
+                                        <img src="assets/img/person-4.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257 255" fill="none">
+                                            <path
+                                                d="M30.7743 183.077C30.4007 182.817 30.0138 182.547 29.6402 182.287C28.9064 181.775 28.7337 180.743 29.2585 180.019C29.7698 179.285 30.7794 179.116 31.5132 179.628L31.5265 179.637C45.18 189.37 60.9235 197.071 76.1443 204.526C80.9454 206.881 85.4918 209.118 89.889 211.369C125.803 229.777 158.251 242.32 189.114 249.715C213.597 255.598 234.577 244.152 245.208 219.113C247.849 212.905 249.693 206.163 250.705 199.078C250.932 197.473 251.146 195.857 251.347 194.233C251.455 193.337 252.267 192.714 253.162 192.822C254.058 192.931 254.682 193.742 254.573 194.638C254.377 196.285 254.153 197.913 253.93 199.542C252.876 206.914 250.963 213.926 248.204 220.388C236.899 247.02 214.525 259.158 188.359 252.875C157.249 245.408 124.55 232.769 88.4082 214.262C84.0377 212.029 79.5047 209.802 74.7169 207.456C59.8002 200.133 44.3967 192.57 30.7743 183.077ZM17.7738 172.749C17.7204 172.711 17.6537 172.665 17.5963 172.605C13.9789 169.291 10.7569 165.837 7.99578 162.347C1.59458 154.239 -0.96387 145.082 0.396814 135.108C4.93918 101.683 51.3402 67.6956 73.6429 51.3646L74.9438 50.408C77.2158 48.7406 79.5982 46.9717 82.0724 45.128C117.855 18.5276 177.723 -25.9955 215.161 21.0858C242.864 55.9119 257.939 109.114 256.572 167.052C256.422 173.468 256.054 179.912 255.479 186.171C255.392 187.062 254.612 187.727 253.72 187.641C252.829 187.555 252.164 186.775 252.25 185.883C252.824 179.683 253.181 173.311 253.335 166.976C254.695 109.787 239.861 57.3477 212.638 23.1134C177.148 -21.5006 121.092 20.1689 84.0123 47.7485C81.5155 49.5962 79.1238 51.3785 76.8518 53.0459L75.5509 54.0025C55.3367 68.8157 7.96459 103.514 3.60853 135.563C2.37514 144.614 4.70676 152.958 10.5362 160.351C13.1918 163.708 16.299 167.043 19.7882 170.228C20.4569 170.833 20.4897 171.866 19.885 172.535C19.336 173.124 18.4275 173.204 17.7738 172.749Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Eboumbou</a></h3>
+                                    <span>Témoin Daniel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.15">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1200ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-2.svg); -webkit-mask-image: url(./assets/images/team/mask-2.svg);">
+                                        <img src="assets/img/person-2.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261 241" fill="none">
+                                            <path
+                                                d="M59.0013 241C58.546 241 58.0744 241 57.619 241C56.7246 241 55.9928 240.252 56.0091 239.358C56.0091 238.463 56.7409 237.748 57.6353 237.748H57.6516C74.4181 237.927 91.7375 235.243 108.488 232.658C113.773 231.845 118.782 231.08 123.677 230.413C163.666 224.982 197.459 216.721 227.008 205.142C250.458 195.97 261.126 174.585 255.532 147.963C254.15 141.361 251.808 134.774 248.588 128.383C247.856 126.936 247.108 125.489 246.344 124.041C245.921 123.244 246.23 122.269 247.027 121.846C247.824 121.423 248.799 121.732 249.222 122.529C250.003 123.992 250.751 125.456 251.499 126.92C254.849 133.571 257.288 140.417 258.72 147.296C264.672 175.609 253.255 198.36 228.195 208.167C198.402 219.827 164.349 228.153 124.116 233.633C119.253 234.3 114.261 235.064 108.992 235.878C92.5669 238.398 75.6052 241 59.0013 241ZM42.43 239.959C42.3649 239.959 42.2836 239.959 42.2023 239.943C37.3399 239.293 32.7213 238.301 28.4606 237.016C18.5731 234.024 11.2388 227.974 6.65277 219.014C-8.73144 188.993 9.90524 134.579 18.8658 108.429L19.3862 106.901C20.2969 104.234 21.2401 101.42 22.2159 98.4931C36.3641 56.2109 60.0259 -14.5467 117.66 2.67517C160.3 15.4086 203.086 50.4378 235.09 98.7533C238.635 104.104 242.018 109.6 245.124 115.064C245.563 115.845 245.303 116.837 244.522 117.276C243.742 117.715 242.75 117.455 242.311 116.674C239.237 111.259 235.887 105.827 232.391 100.542C200.809 52.8446 158.657 18.3033 116.749 5.78129C62.1237 -10.5299 39.9581 55.7068 25.3057 99.5339C24.3137 102.477 23.3705 105.307 22.4598 107.974L21.9394 109.503C13.8245 133.213 -5.2025 188.766 9.54747 217.55C13.7106 225.681 20.3945 231.194 29.4038 233.926C33.5019 235.162 37.9578 236.122 42.6414 236.74C43.5358 236.853 44.1538 237.683 44.04 238.577C43.9261 239.374 43.2268 239.959 42.43 239.959Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Atikou</a></h3>
+                                    <span>Témoin Leslie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.25">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1600ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-4.svg); -webkit-mask-image: url(./assets/images/team/mask-4.svg);">
+                                        <img src="assets/img/person-4.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257 255" fill="none">
+                                            <path
+                                                d="M30.7743 183.077C30.4007 182.817 30.0138 182.547 29.6402 182.287C28.9064 181.775 28.7337 180.743 29.2585 180.019C29.7698 179.285 30.7794 179.116 31.5132 179.628L31.5265 179.637C45.18 189.37 60.9235 197.071 76.1443 204.526C80.9454 206.881 85.4918 209.118 89.889 211.369C125.803 229.777 158.251 242.32 189.114 249.715C213.597 255.598 234.577 244.152 245.208 219.113C247.849 212.905 249.693 206.163 250.705 199.078C250.932 197.473 251.146 195.857 251.347 194.233C251.455 193.337 252.267 192.714 253.162 192.822C254.058 192.931 254.682 193.742 254.573 194.638C254.377 196.285 254.153 197.913 253.93 199.542C252.876 206.914 250.963 213.926 248.204 220.388C236.899 247.02 214.525 259.158 188.359 252.875C157.249 245.408 124.55 232.769 88.4082 214.262C84.0377 212.029 79.5047 209.802 74.7169 207.456C59.8002 200.133 44.3967 192.57 30.7743 183.077ZM17.7738 172.749C17.7204 172.711 17.6537 172.665 17.5963 172.605C13.9789 169.291 10.7569 165.837 7.99578 162.347C1.59458 154.239 -0.96387 145.082 0.396814 135.108C4.93918 101.683 51.3402 67.6956 73.6429 51.3646L74.9438 50.408C77.2158 48.7406 79.5982 46.9717 82.0724 45.128C117.855 18.5276 177.723 -25.9955 215.161 21.0858C242.864 55.9119 257.939 109.114 256.572 167.052C256.422 173.468 256.054 179.912 255.479 186.171C255.392 187.062 254.612 187.727 253.72 187.641C252.829 187.555 252.164 186.775 252.25 185.883C252.824 179.683 253.181 173.311 253.335 166.976C254.695 109.787 239.861 57.3477 212.638 23.1134C177.148 -21.5006 121.092 20.1689 84.0123 47.7485C81.5155 49.5962 79.1238 51.3785 76.8518 53.0459L75.5509 54.0025C55.3367 68.8157 7.96459 103.514 3.60853 135.563C2.37514 144.614 4.70676 152.958 10.5362 160.351C13.1918 163.708 16.299 167.043 19.7882 170.228C20.4569 170.833 20.4897 171.866 19.885 172.535C19.336 173.124 18.4275 173.204 17.7738 172.749Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Ulrich</a></h3>
+                                    <span>Témoin Daniel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.20">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1400ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-3.svg); -webkit-mask-image: url(./assets/images/team/mask-3.svg);">
+                                        <img src="assets/img/person-3.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 254" fill="none">
+                                            <path
+                                                d="M131.937 252.602C121.041 250.837 110.559 246.734 102.019 241.452C81.2753 228.594 65.364 208.806 49.9852 189.654C47.1118 186.08 44.2666 182.545 41.4244 179.096C32.5393 168.313 22.4797 156.086 14.6852 143.024C14.2133 142.226 14.4678 141.185 15.2683 140.696C16.0662 140.224 17.107 140.479 17.5957 141.279C25.2526 154.131 35.2254 166.258 44.0236 176.941C46.8797 180.409 49.7223 183.961 52.6124 187.538C67.8202 206.473 83.5437 226.041 103.79 238.579C123.536 250.812 154.089 256.448 174.523 239.937C177.033 237.905 179.512 235.541 181.897 232.904C182.524 232.216 183.599 232.15 184.288 232.776C184.976 233.403 185.043 234.479 184.416 235.167C181.925 237.924 179.322 240.422 176.656 242.567C163.906 252.885 147.502 255.123 131.937 252.602ZM188.711 228.478C188.46 228.437 188.217 228.346 187.988 228.172C187.236 227.62 187.064 226.562 187.615 225.81C200.423 208.132 208.397 184.777 214.877 164.288C218.16 153.879 221.191 143.12 224.096 132.718C226.723 123.388 229.419 113.742 232.339 104.305C239.682 80.5034 249.738 47.901 233.115 24.3398C231.089 21.4697 228.747 18.8575 226.147 16.5641C213.624 5.55255 196.955 3.59094 185.188 3.91772C184.254 3.95543 183.465 3.20922 183.446 2.2616C183.426 1.33071 184.155 0.538559 185.103 0.520304C202.853 0.0463956 217.829 4.72227 228.399 14.009C231.195 16.4715 233.711 19.2836 235.891 22.3677C253.478 47.2875 243.136 80.8054 235.583 105.277C232.688 114.667 229.978 124.293 227.369 133.609C224.445 144.025 221.409 154.817 218.117 165.276C211.561 186.028 203.471 209.674 190.372 227.768C189.971 228.338 189.314 228.575 188.711 228.478ZM9.82859 132.395C9.29302 132.309 8.81485 131.973 8.55874 131.434C6.9008 127.885 5.47128 124.304 4.27337 120.778C0.928071 110.892 -3.1574 92.11 7.02199 77.4076C13.8369 67.5706 24.7285 62.3615 35.2669 57.3185C38.0788 55.9705 40.7405 54.7013 43.3321 53.3348C81.061 33.5454 121.614 13.8183 162.414 3.69817C168.481 2.19043 174.583 1.20376 180.546 0.761268C181.466 0.704118 182.3 1.3888 182.354 2.32511C182.425 3.26413 181.727 4.07844 180.79 4.13288C175.02 4.55498 169.112 5.50452 163.223 6.97243C122.766 16.9934 82.4353 36.6192 44.8733 56.3326C42.226 57.7244 39.4141 59.0724 36.6968 60.367C26.5673 65.2185 16.0872 70.2195 9.78469 79.3322C0.4722 92.8182 4.33764 110.414 7.47114 119.698C8.61838 123.113 10.014 126.586 11.6212 130.023C12.018 130.861 11.6491 131.866 10.8119 132.263C10.4781 132.415 10.1466 132.447 9.82859 132.395Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Adama</a></h3>
+                                    <span>Témoin Leslie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.25">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1600ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-4.svg); -webkit-mask-image: url(./assets/images/team/mask-4.svg);">
+                                        <img src="assets/img/person-4.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257 255" fill="none">
+                                            <path
+                                                d="M30.7743 183.077C30.4007 182.817 30.0138 182.547 29.6402 182.287C28.9064 181.775 28.7337 180.743 29.2585 180.019C29.7698 179.285 30.7794 179.116 31.5132 179.628L31.5265 179.637C45.18 189.37 60.9235 197.071 76.1443 204.526C80.9454 206.881 85.4918 209.118 89.889 211.369C125.803 229.777 158.251 242.32 189.114 249.715C213.597 255.598 234.577 244.152 245.208 219.113C247.849 212.905 249.693 206.163 250.705 199.078C250.932 197.473 251.146 195.857 251.347 194.233C251.455 193.337 252.267 192.714 253.162 192.822C254.058 192.931 254.682 193.742 254.573 194.638C254.377 196.285 254.153 197.913 253.93 199.542C252.876 206.914 250.963 213.926 248.204 220.388C236.899 247.02 214.525 259.158 188.359 252.875C157.249 245.408 124.55 232.769 88.4082 214.262C84.0377 212.029 79.5047 209.802 74.7169 207.456C59.8002 200.133 44.3967 192.57 30.7743 183.077ZM17.7738 172.749C17.7204 172.711 17.6537 172.665 17.5963 172.605C13.9789 169.291 10.7569 165.837 7.99578 162.347C1.59458 154.239 -0.96387 145.082 0.396814 135.108C4.93918 101.683 51.3402 67.6956 73.6429 51.3646L74.9438 50.408C77.2158 48.7406 79.5982 46.9717 82.0724 45.128C117.855 18.5276 177.723 -25.9955 215.161 21.0858C242.864 55.9119 257.939 109.114 256.572 167.052C256.422 173.468 256.054 179.912 255.479 186.171C255.392 187.062 254.612 187.727 253.72 187.641C252.829 187.555 252.164 186.775 252.25 185.883C252.824 179.683 253.181 173.311 253.335 166.976C254.695 109.787 239.861 57.3477 212.638 23.1134C177.148 -21.5006 121.092 20.1689 84.0123 47.7485C81.5155 49.5962 79.1238 51.3785 76.8518 53.0459L75.5509 54.0025C55.3367 68.8157 7.96459 103.514 3.60853 135.563C2.37514 144.614 4.70676 152.958 10.5362 160.351C13.1918 163.708 16.299 167.043 19.7882 170.228C20.4569 170.833 20.4897 171.866 19.885 172.535C19.336 173.124 18.4275 173.204 17.7738 172.749Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Thierry</a></h3>
+                                    <span>Témoin Daniel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-6 col-12 layer" data-depth="0.25">
+                            <div class="wpo-team-item wow fadeInUp" data-wow-duration="1600ms">
+                                <div class="wpo-team-img-wrap">
+                                    <div class="wpo-team-img"
+                                        style="mask-image: url(./assets/images/team/mask-4.svg); -webkit-mask-image: url(./assets/images/team/mask-4.svg);">
+                                        <img src="assets/img/person-4.jpg" alt="">
+                                    </div>
+                                    <div class="team-shape">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257 255" fill="none">
+                                            <path
+                                                d="M30.7743 183.077C30.4007 182.817 30.0138 182.547 29.6402 182.287C28.9064 181.775 28.7337 180.743 29.2585 180.019C29.7698 179.285 30.7794 179.116 31.5132 179.628L31.5265 179.637C45.18 189.37 60.9235 197.071 76.1443 204.526C80.9454 206.881 85.4918 209.118 89.889 211.369C125.803 229.777 158.251 242.32 189.114 249.715C213.597 255.598 234.577 244.152 245.208 219.113C247.849 212.905 249.693 206.163 250.705 199.078C250.932 197.473 251.146 195.857 251.347 194.233C251.455 193.337 252.267 192.714 253.162 192.822C254.058 192.931 254.682 193.742 254.573 194.638C254.377 196.285 254.153 197.913 253.93 199.542C252.876 206.914 250.963 213.926 248.204 220.388C236.899 247.02 214.525 259.158 188.359 252.875C157.249 245.408 124.55 232.769 88.4082 214.262C84.0377 212.029 79.5047 209.802 74.7169 207.456C59.8002 200.133 44.3967 192.57 30.7743 183.077ZM17.7738 172.749C17.7204 172.711 17.6537 172.665 17.5963 172.605C13.9789 169.291 10.7569 165.837 7.99578 162.347C1.59458 154.239 -0.96387 145.082 0.396814 135.108C4.93918 101.683 51.3402 67.6956 73.6429 51.3646L74.9438 50.408C77.2158 48.7406 79.5982 46.9717 82.0724 45.128C117.855 18.5276 177.723 -25.9955 215.161 21.0858C242.864 55.9119 257.939 109.114 256.572 167.052C256.422 173.468 256.054 179.912 255.479 186.171C255.392 187.062 254.612 187.727 253.72 187.641C252.829 187.555 252.164 186.775 252.25 185.883C252.824 179.683 253.181 173.311 253.335 166.976C254.695 109.787 239.861 57.3477 212.638 23.1134C177.148 -21.5006 121.092 20.1689 84.0123 47.7485C81.5155 49.5962 79.1238 51.3785 76.8518 53.0459L75.5509 54.0025C55.3367 68.8157 7.96459 103.514 3.60853 135.563C2.37514 144.614 4.70676 152.958 10.5362 160.351C13.1918 163.708 16.299 167.043 19.7882 170.228C20.4569 170.833 20.4897 171.866 19.885 172.535C19.336 173.124 18.4275 173.204 17.7738 172.749Z"
+                                                fill="" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="wpo-team-text">
+                                    <h3><a>Zeuong</a></h3>
+                                    <span>Témoin Daniel</span>
                                 </div>
                             </div>
                         </div>
@@ -630,11 +722,11 @@
                                     </div>
                                     <div class="radio-buttons">
                                         <p>
-                                            <input type="radio" id="attend" name="radio-group" >
+                                            <input type="radio" id="attend" name="radio" >
                                             <label for="attend">Oui, je serai là</label>
                                         </p>
                                     </div>
-                                    <div>
+                                    <!-- <div>
                                         <select name="guest" class="form-control" required>
                                             <option disabled="disabled" selected>Nombre d'invités</option>
                                             <option>01</option>
@@ -645,20 +737,20 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <!-- <input type="text" class="form-control" name="what" id="what" placeholder="À quoi assisterez-vous ?" required> -->
+                                        <input type="text" class="form-control" name="what" id="what" placeholder="À quoi assisterez-vous ?" required> 
                                     </div>
                                     <div>
-                                        <!-- <select name="meal" class="form-control last" required>
+                                        <select name="meal" class="form-control last" required>
                                             <option disabled="disabled" selected>Préférences de repas</option>
                                             <option>Soupe de poulet</option>
                                             <option>Motton Kabab</option>
                                             <option>Poulet BBQ</option>
                                             <option>Salade Mixte</option>
                                             <option>Côtes de bœuf</option>
-                                        </select> -->
-                                    </div>
+                                        </select>
+                                    </div> -->
                                     <div class="submit-area">
-                                        <button type="submit" name="send" class="theme-btn">RSVP</button>
+                                        <button type="submit" name="send" class="theme-btn">Envoyer</button>
                                         <div id="c-loader">
                                             <i class="ti-reload"></i>
                                         </div>
@@ -718,20 +810,18 @@
                             <div class="wpo-event-item wow fadeInUp" data-wow-duration="1000ms">
                                 <div class="wpo-event-img">
                                     <div class="wpo-event-img-inner">
-                                        <img src="assets/img/eglise-beauvais.jpg" alt="">
+                                        <img src="assets/img/eglise-jean-baptiste.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="wpo-event-text">
                                     <div class="title">
-                                        <h2>L'église</h2>
+                                        <h2>Cérémonie Religieuse</h2>
                                     </div>
                                     <ul>
-                                        <li>22 Septembre 2024 <br>
-                                            1:00 PM – 2:30 PM</li>
-                                        <li>4517 Washington Ave. Manchester, Kentucky 39495</li>
-                                        <li>+1 234-567-8910</li>
+                                        <li>21 Septembre 2024 à 14h</li>
+                                        <li>Église Saint-Jean-Baptiste, de Chaumont-En-Vexin 60240</li>
                                         <li> <a class="popup-gmaps"
-                                                href="https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Saint-Pierre_de_Beauvais#/map/0">Voir le lieu</a></li>
+                                                href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10414.634673487803!2d1.8814691!3d49.2639152!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6e47482cf09b7%3A0x33a18371c6d55237!2s%C3%89glise%20st%20Jean-Baptiste!5e0!3m2!1sfr!2scm!4v1715616849045!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Voir le lieu</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -740,20 +830,18 @@
                             <div class="wpo-event-item wow fadeInUp" data-wow-duration="1200ms">
                                 <div class="wpo-event-img">
                                     <div class="wpo-event-img-inner">
-                                        <img src="assets/img/mairie-beauvais.jpg" alt="">
+                                        <img src="assets/img/domaine-de-la-muette.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="wpo-event-text">
                                     <div class="title">
-                                        <h2>La Mairie</h2>
+                                        <h2>Cocktail de Bienvenue</h2>
                                     </div>
                                     <ul>
-                                        <li>22 Septembre 2024<br>
-                                            1:00 PM – 2:30 PM</li>
-                                        <li>4517 Washington Ave. Manchester, Kentucky 39495</li>
-                                        <li>+1 234-567-8910</li>
+                                        <li>21 Septembre 2024 à 16h</li>
+                                        <li>Au Domaine de la Muette, à Montchevreuil 60240</li>
                                         <li> <a class="popup-gmaps"
-                                                href="https://www.google.com/maps/place/Mairie+de+Beauvais/@49.4295559,2.082071,15z/data=!4m2!3m1!1s0x0:0x6a0ca46432eef192?sa=X&ved=2ahUKEwjS1KD5zrmEAxU6VqQEHYdoBYQQ_BJ6BAgTEAA">Voir le lieu</a></li>
+                                                href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10406.250289580752!2d2.0153045!3d49.3036289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6fc4a4be6350f%3A0x2ef4978f91785453!2sDomaine%20de%20la%20Muette!5e0!3m2!1sfr!2scm!4v1715616513929!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Voir le lieu</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -762,7 +850,7 @@
                             <div class="wpo-event-item wow fadeInUp" data-wow-duration="1400ms">
                                 <div class="wpo-event-img">
                                     <div class="wpo-event-img-inner">
-                                        <img src="assets/img/party-beauvais.jpg" alt="">
+                                        <img src="assets/img/domaine-de-la-muette-soir.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="wpo-event-text">
@@ -770,12 +858,10 @@
                                         <h2>La Soirée</h2>
                                     </div>
                                     <ul>
-                                        <li>22 Septembre 2024<br>
-                                            1:00 PM – 2:30 PM</li>
-                                        <li>4517 Washington Ave. Manchester, Kentucky 39495</li>
-                                        <li>+1 234-567-8910</li>
+                                        <li>21 Septembre 2024 à 19h</li>
+                                        <li>Au Domaine de la Muette, à Montchevreuil 60240</li>
                                         <li> <a class="popup-gmaps"
-                                                href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25211.21212385712!2d144.95275648773628!3d-37.82748510398018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce7e0!2zTWVsYm91cm5lIFZJQyAzMDA0LCDgpoXgprjgp43gpp_gp43gprDgp4fgprLgpr_gpq_gprzgpr4!5e0!3m2!1sbn!2sbd!4v1503742051881">Voir le lieu</a></li>
+                                                href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10406.250289580752!2d2.0153045!3d49.3036289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6fc4a4be6350f%3A0x2ef4978f91785453!2sDomaine%20de%20la%20Muette!5e0!3m2!1sfr!2scm!4v1715616513929!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Voir le lieu</a></li>
                                     </ul>
                                 </div>
                             </div>

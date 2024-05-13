@@ -1,6 +1,11 @@
 <?php
-  session_start();
+    session_start();
 
-  // Destroy the session
-  session_destroy();
+    if ($_SESSION['id']) {
+        session_destroy();
+        header('Location: login.html');
+    } else {
+        header('Location: login.html');
+    }
+    
 ?>

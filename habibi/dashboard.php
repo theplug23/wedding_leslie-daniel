@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+    
+include('./connectDB.php');
+
+$conn = $pdo->open();
+
+if ($_SESSION['id']) {
+    $stmt = $conn->prepare("SELECT * FROM invite");
+    $stmt->execute();
+    
+    $invites = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} else {
+    header('Location: login.html');
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/dash.css">
     <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
     <style>
         .data-table {
             width: 100%;
@@ -77,7 +98,9 @@
 <body>
     <div id="invitesTable" class="dashboard">
         <div class="hearder">
-            <button onclick="if (confirm('Poursuivre la déconnexion ?')) logout()">Déconnexion</button>
+            <a href="logout.php">
+                <button>Déconnexion</button>
+            </a>
             <h1>Tableau de bord </h1>
         </div>
         <table class="data-table">
@@ -91,15 +114,40 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <?php if (count($invites) == 0): ?>
+                    <tr>
+                        <td>Il n'y a aucune demande d'invitation pour l'instant</td>
+                    </tr>
+                <?php elseif (count($invites) > 0): ?>
+                    <?php foreach($invites as $invite): ?>
+                    <tr>
+                        <td><?= $invite['num_invite'] ?></td>
+                        <td><?= $invite['nom_invite'] ?></td>
+                        <td><?= $invite['email_invite'] ?></td>
+                        <td style="color: <?= $invite['status_invite'] == 'pending' ? 'red' : 'green' ?>"><?= $invite['status_invite'] ?></td>
+                        <td style="color: <?= $invite['status_invite'] == 'success' ? 'green' : '' ?>">
+                            <?php if ($invite['status_invite'] == 'pending'): ?>
+                            <form method='post' action="send_invitation.php">
+                                <input type='hidden' name='email' value='<?= $invite['email_invite'] ?>'>
+                                <button type='submit' name='send_invitation'>Envoyer l'invitation</button>
+                            </form>
+                            <?php elseif ($invite['status_invite'] == 'success'): ?>
+                            Invitation déjà envoyée
+                            <?php endif ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                <?php endif ?>
             </tbody>
         </table>
+        <div class="row" style="margin-top: 20px">
+            <a href="index.php">Revenir sur le site principal</a>
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/dashboard.js"> </script>
     <script>
        $(document).ready(function() {
-            // Charger les données du tableau au chargement de la page
             function loadTableData() {
                 $.ajax({
                     url: 'dash.php',
@@ -113,9 +161,9 @@
                 });
             }
 
-            loadTableData(); // Charger les données initiales du tableau
+            loadTableData(); 
 
-            // Gérer l'événement d'envoi d'invitation
+         
             $('#invitesTable').on('submit', 'form', function(event) {
                 event.preventDefault();
 
@@ -141,7 +189,6 @@
                 url: 'logout.php',
                 type: 'POST',
                 success: function(response) {
-                    // Redirect to login page on successful logout
                     window.location.href = "./login.html";
                 },
                 error: function(xhr, status, error) {
@@ -149,6 +196,6 @@
                 }
             });
         }
-    </script>
+    </script>-->
 </body>
 </html>

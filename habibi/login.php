@@ -1,55 +1,42 @@
 <?php
-// Vérifier si le formulaire a été soumis
+
 session_start();
+
+include('./connectDB.php');
+
+$conn = $pdo->open();
+
 
 if (isset($_SESSION['email'])) {
     header('Location: dashboard.html');
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les valeurs du formulaire
+if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['pass'];
-
-    $host = "localhost";
-    $user = "u965103173_leslie_daniel";
-    $pwd = "King1992!!";
-    $dbname = "u965103173_leslie_daniel";
-
-    $con = new mysqli($host, $user, $pwd, $dbname);
-
-    if($con->connect_error){
-        die("erreur de connexion : ". $con->connect_error);
-    }
-
-    $query = "SELECT * FROM admin WHERE email_admin='$email' AND mdp='$password'";
-
-    $result = $con->query($query);
-
-    // var_dump($_POST);
-    // exit();
-    if ($result->num_rows == 1) {
-        $_SESSION['email'] = $email;
+    
+    if ($email === '' || $password === '') {
+        echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Veuillez entrer vos identifiants.</p>";
+        echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./login.html';\">Ok, compris</button>";
+    } else {
         
-        header('Location: dashboard.html');
-        exit();
-    } else if ($email === '' || $password === ''){
-        echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Remplir tous les champs, puis réessayer.</p>";
-        echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./login.html';\">Ok, compris</button>";
-    }
-    else{
-        echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Identifiants incorrects. Veuillez réessayer.</p>";
-        echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./login.html';\">Ok, compris</button>";
-
+        $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM admin WHERE email_admin=:email AND mdp=:password");
+        $stmt->execute(['email' => $email, 'password' => $password]);
+        $row = $stmt->fetch();
+        
+        if ($row['numrows'] == 1) {
+            $_SESSION['id'] = $row['id_admin'];
+            $_SESSION['email'] = $row['email_admin'];
+            
+            header('Location: dashboard.php');
+        }
+        
     }
 } else {
-    if(isset($_SESSION['email'])){
-        header('Location: dashboard.html');
-        exit();
-    }else{
-        header('Location: login.html');
-        exit();
-    }
+    echo "<p style='color:red; text-align: center; margin: 20px auto; padding: 10px; background-color: #fbeaea; border: 1px solid #f44336; border-radius: 5px;'>Veuillez entrer vos identifiants.</p>";
+    echo "<button style='display: block; margin: 20px auto; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;' onclick=\"window.location.href='./login.html';\">Ok, compris</button>";
 }
+
+
 ?>
