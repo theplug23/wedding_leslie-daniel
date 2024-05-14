@@ -295,7 +295,7 @@
                         <div class="row">
                             <div class="col col-lg-6 col-12">
                                 <div class="wpo-story-img">
-                                    <img src="assets/img/ld2.jpeg" alt="">
+                                    <img src="assets/img/ld5.jpeg" alt="">
                                 </div>
                             </div>
                             <div class="col col-lg-6 col-12">
@@ -331,7 +331,7 @@
                         <div class="row">
                             <div class="col col-lg-6 col-12 order-lg-2 order-1">
                                 <div class="wpo-story-img">
-                                    <img src="assets/img/ld6.jpeg" alt="">
+                                    <img src="assets/img/ld9.jpeg" alt="">
                                 </div>
                             </div>
                             <div class="col col-lg-6 col-12 order-lg-1 order-2">
