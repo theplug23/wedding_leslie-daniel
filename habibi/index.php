@@ -928,9 +928,8 @@
                                     <h3>Contact </h3>
                                 </div>
                                 <div class="contact-ft">
-                                    <p>Habibi@wpoceans.com</p>
-                                    <p>4517 Washington Ave. Manchester,
-                                        Kentucky 39495</p>
+                                    <p>Pour plus d'infos laissez un mail à</p>
+                                    <p>Leslietchouopa@yahoo.com</p>
                                 </div>
                             </div>
                         </div>
